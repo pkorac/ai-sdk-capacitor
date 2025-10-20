@@ -38,3 +38,8 @@ bun run generate
 bun cap sync
 bun cap open ios
 ```
+
+## Working example
+
+If you try out the `/index-stream-working` in the client (browser or ios) the streaming works.
+The endpoint that is used is `/stream-working`.
