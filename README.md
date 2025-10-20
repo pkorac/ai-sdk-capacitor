@@ -34,7 +34,7 @@ bun dev
 To generate a build and sync capacitor for iOS:
 
 ```bash
-bun run generate
+bun nuxt generate
 bun cap sync
 bun cap open ios
 ```
