@@ -28,15 +28,15 @@ const handleSubmit = (e: Event) => {
 </script>
 
 <template>
-	<div class="flex flex-col gap-6 py-24 mx-auto w-full max-w-md stretch">
+	<div class="flex flex-col gap-4 py-24 mx-auto w-full max-w-md pb-32">
 		<div
 			v-for="message in messageList"
 			:key="message.id"
-			class="whitespace-pre-wrap mt-12"
+			class="whitespace-pre-wrap"
 		>
 			<strong>{{ `${message.role}: ` }}</strong>
 			<template v-for="part in message.parts">
-				<div v-if="part.type === 'text'" class="mt-4">
+				<div v-if="part.type === 'text'" class="">
 					{{ part.text }}
 				</div>
 				<template v-if="part.type === 'tool-getWeather'">
@@ -49,13 +49,21 @@ const handleSubmit = (e: Event) => {
 			</template>
 		</div>
 
-		<form @submit="handleSubmit">
+		<form
+			@submit="handleSubmit"
+			class="fixed bottom-4 left-1/2 -translate-x-1/2 flex gap-4 bg-elevated p-3 shadow-lg rounded-xl"
+		>
 			<input
-				class="fixed bottom-0 p-2 mb-8 w-full max-w-md rounded border border-gray-300 shadow-xl"
+				class="border border-accented px-2 rounded-md w-64"
 				v-model="input"
 				placeholder="Say something..."
 			/>
-			<button type="submit">Send</button>
+			<button
+				type="submit"
+				class="bg-primary-400 rounded-md py-2 px-4 text-white"
+			>
+				Send
+			</button>
 		</form>
 	</div>
 </template>

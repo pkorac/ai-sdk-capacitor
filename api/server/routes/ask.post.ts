@@ -25,7 +25,8 @@ export default defineEventHandler(async (event) => {
 				.describe("The city for which the weather is requested"),
 		}),
 		execute: async ({ city }) => {
-			return `It is 15º and sunny.`;
+			const randomTemp = Math.floor(Math.random() * 30) + 10;
+			return `It is ${randomTemp}º and sunny.`;
 		},
 	});
 
